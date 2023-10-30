@@ -1,0 +1,74 @@
+@startuml Use case Quản trị
+left to right direction
+actor "Quản trị" as QT
+
+rectangle "Hệ thống quản trị" {
+    QT -down- (Đăng nhập)
+    QT -down- (Thêm sản phẩm)
+    QT -down- (Xem sản phẩm)
+    QT -down- (Tạo danh mục sản phẩm)
+    QT -down- (Xem danh mục sản phẩm)
+    QT -down- (Tạo bộ sưu tập sản phẩm)
+    QT -down- (Xem bộ sưu tập sản phẩm)
+    QT -down- (Tạo khuyến mãi)
+    QT -down- (Xem khuyến mãi)
+    QT -down- (Xem đơn hàng)
+    QT -down- (Hỗ trợ khách hàng)
+    QT -down- (Gửi email)
+    
+    (Đăng nhập) <.down- (Đăng xuất) : <<extend>>
+    (Đăng nhập) <.down- (Đổi mật khẩu) : <<extend>>
+    (Thêm sản phẩm) -down.> (Thêm hình ảnh sản phẩm) : <<include>>
+    (Thêm sản phẩm) -down.> (Thêm mô tả) : <<include>>
+    (Thêm sản phẩm) -down.> (Thêm kích cỡ) : <<include>>
+    (Thêm sản phẩm) -down.> (Thêm số lượng tồn kho) : <<include>>
+    (Thêm sản phẩm) -down.> (Thêm giá sản phẩm) : <<include>>
+    (Thêm sản phẩm) -down.> (Thêm mã sản phẩm) : <<include>>
+    (Xem sản phẩm) <.down- (Cập nhật số lượng tồn kho) : <<extend>>
+    (Xem sản phẩm) <.down- (Sửa thông tin sản phẩm) : <<extend>>
+    (Xem sản phẩm) <.down- (Xóa sản phẩm) : <<extend>>
+    (Sửa thông tin sản phẩm) <|-down- (Sửa hình ảnh sản phẩm)
+    (Sửa thông tin sản phẩm) <|-down- (Sửa mô tả sản phẩm)
+    (Sửa thông tin sản phẩm) <|-down- (Sửa kích cỡ sản phẩm)
+    (Sửa thông tin sản phẩm) <|-down- (Sửa giá sản phẩm)
+    (Tạo danh mục sản phẩm) -down.> (Tạo tên danh mục) : <<include>>
+    (Tạo danh mục sản phẩm) -down.> (Chọn danh sách sản phẩm) : <<include>>
+    (Tạo danh mục sản phẩm) -down.> (Tạo hình ảnh danh mục) : <<include>>
+    (Xem danh mục sản phẩm) <.down- (Sửa danh mục sản phẩm) : <<extend>>
+    (Sửa danh mục sản phẩm) <|-down- (Sửa tên danh mục)
+    (Sửa danh mục sản phẩm) <|-down- (Sửa hình ảnh danh mục)
+    (Sửa danh mục sản phẩm) <|-down- (Sửa danh sách sản phẩm)
+    (Xem danh mục sản phẩm) <.down- (Xóa danh mục sản phẩm) : <<extend>>
+    (Tạo bộ sưu tập sản phẩm) -down.> (Tạo tên bộ sưu tập) : <<include>>
+    (Tạo bộ sưu tập sản phẩm) -down.> (Chọn danh sách sản phẩm) : <<include>>
+    (Tạo bộ sưu tập sản phẩm) -down.> (Tạo hình ảnh bộ sưu tập) : <<include>>
+    (Xem bộ sưu tập sản phẩm) <.down- (Sửa bộ sưu tập sản phẩm) : <<extend>>
+    (Xem bộ sưu tập sản phẩm) <.down- (Xóa bộ sưu tập sản phẩm) : <<extend>>
+    (Sửa bộ sưu tập sản phẩm) <|-down- (Sửa tên bộ sưu tập sản phẩm)
+    (Sửa bộ sưu tập sản phẩm) <|-down- (Sửa hình ảnh bộ sưu tập sản phẩm)
+    (Sửa bộ sưu tập sản phẩm) <|-down- (Sửa danh sách sản phẩm)
+    (Tạo khuyến mãi) -down.> (Thêm mã khuyến mãi) : <<include>>
+    (Tạo khuyến mãi) -down.> (Thêm hình ảnh khuyến mãi) : <<include>>
+    (Tạo khuyến mãi) -down.> (Thêm ngày hết hạn) : <<include>>
+    (Tạo khuyến mãi) -down.> (Thêm điều kiện sử dụng) : <<include>>
+    (Tạo khuyến mãi) -down.> (Thêm giá trị khuyến mãi) : <<include>>
+    (Tạo khuyến mãi) -down.> (Thêm mô tả khuyến mãi) : <<include>>
+    (Tạo khuyến mãi) -down.> (Thêm số lượng sử dụng khuyến mãi) : <<include>>
+    (Xem khuyến mãi) <.down- (Sửa khuyến mãi) : <<extend>>
+    (Sửa khuyến mãi) <|-down- (Sửa giá trị khuyến mãi)
+    (Sửa khuyến mãi) <|-down- (Sửa mô tả)
+    (Sửa khuyến mãi) <|-down- (Sửa điều kiện sử dụng)
+    (Sửa khuyến mãi) <|-down- (Sửa hình ảnh)
+    (Sửa khuyến mãi) <|-down- (Sửa ngày hết hạn)
+    (Sửa khuyến mãi) <|-down- (Sửa số lượng sử dụng khuyến mãi)
+    (Xem khuyến mãi) <.down- (Xóa khuyến mãi) : <<extend>>
+    (Xem khuyến mãi) <.down- (Sao chép mã khuyến mãi) : <<extend>>
+    (Xem đơn hàng) <.down- (Xác nhận đơn hàng) : <<extend>>
+    (Xác nhận đơn hàng) <.down- (Gửi email) : <<include>>
+    (Xác nhận đơn hàng) <.down- (Tiếp nhận đơn hàng) : <<extend>>
+    (Xác nhận đơn hàng) <.down- (Hủy đơn hàng) : <<extend>>
+    (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua email)
+    (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua số điện thoại)
+    (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua mạng xã hội)
+}
+@enduml

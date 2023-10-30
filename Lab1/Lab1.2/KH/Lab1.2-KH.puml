@@ -1,0 +1,54 @@
+@startuml Use case Khách hàng
+left to right direction
+actor "Khách hàng" as KH
+
+rectangle "Hệ thống khách hàng mua hàng" {
+    KH -down- (Tìm kiếm sản phẩm)
+    KH -down- (Xem danh sách sản phẩm nổi bật)
+    KH -down- (Xem thông tin khuyến mãi)
+    KH -down- (Xem danh mục sản phẩm)
+    KH -down- (Xem bộ sưu tập sản phẩm)
+    KH -down- (Xem giỏ hàng)
+    KH -down- (Xem feedback của khách hàng khác)
+    KH -down- (Liên hệ với người bán)
+    (Xem bộ sưu tập sản phẩm) <.down- (Xem chi tiết bộ sưu tập sản phẩm) : <<extend>>
+    (Xem chi tiết sản phẩm) <.down- (Xem chi tiết bộ sưu tập sản phẩm) : <<extend>>
+    (Tìm kiếm sản phẩm) <|-down- (Tìm kiếm sản phẩm theo danh mục)
+    (Tìm kiếm sản phẩm) <|-down- (Tìm kiếm sản phẩm theo giá)
+    (Tìm kiếm sản phẩm) <|-down- (Tìm kiếm sản phẩm theo tên)
+    (Xem danh sách sản phẩm nổi bật) <.down- (Xem chi tiết sản phẩm) : <<extend>>
+    (Xem danh mục sản phẩm) <.down- (Xem chi tiết danh mục sản phẩm) : <<extend>>
+    (Xem chi tiết danh mục sản phẩm) <.down- (Xem chi tiết sản phẩm) : <<extend>>
+    (Xem chi tiết sản phẩm) <.down- (Xem mô tả) : <<extend>>
+    (Xem chi tiết sản phẩm) <.down- (Xem hình ảnh) : <<extend>>
+    (Xem chi tiết sản phẩm) <.down- (Sản phẩm tương tự) : <<extend>>
+    (Xem chi tiết sản phẩm) <.down- (Lựa chọn mua hàng) : <<extend>>
+    (Lựa chọn mua hàng) <|-down- (Thêm vào giỏ hàng)
+    (Lựa chọn mua hàng) <|-down- (Mua ngay)
+    (Mua ngay) <.down- (Đặt hàng) : <<include>>
+    (Lựa chọn mua hàng) <.down- (Lựa chọn các tùy chọn sản phẩm) : <<include>>
+    (Lựa chọn các tùy chọn sản phẩm) <.down- (Lựa chọn mã giảm giá) : <<extend>>
+    (Lựa chọn các tùy chọn sản phẩm) <.down- (Lựa chọn kích cỡ) : <<include>>
+    (Lựa chọn các tùy chọn sản phẩm) <.down- (Lựa chọn số lượng) : <<include>>
+    (Xem giỏ hàng) <.down- (Lựa chọn mua hàng) : <<extend>>
+    (Xem giỏ hàng) <.down- (Xóa khỏi giỏ hàng) : <<extend>>
+    (Xem giỏ hàng) <.down- (Cập nhật giỏ hàng) : <<extend>>
+    (Cập nhật giỏ hàng) <.down- (Thay đổi số lượng) : <<extend>>
+    (Xem giỏ hàng) <.down- (Đặt hàng) : <<extend>>
+    (Đặt hàng) <.down- (Xem tổng giá) : <<include>>
+    (Đặt hàng) <.down- (Chọn địa chỉ giao hàng) : <<include>>
+    (Đặt hàng) <.down- (Thanh toán) : <<include>>
+    (Đặt hàng) -down.> (Gửi thông tin đặt hàng) : <<include>>
+    (Thanh toán) <.down- (Xem thông tin đặt hàng) : <<include>>
+    (Thanh toán) <.down- (Nhập thông tin nhận hàng) : <<include>>
+    (Thanh toán) <.down- (Chọn phương thức thanh toán) : <<include>>
+    (Chọn phương thức thanh toán) <|-down- (Thanh toán khi nhận hàng)
+    (Chọn phương thức thanh toán) <|-down- (Thanh toán trực tuyến)
+    (Thanh toán trực tuyến) <|-down- (Qua ngân hàng)
+    (Thanh toán trực tuyến) <|-down- (Qua ví điện tử)
+    (Nhập thông tin nhận hàng) <.down- (Nhập họ tên) : <<include>>
+    (Nhập thông tin nhận hàng) <.down- (Nhập địa chỉ) : <<include>>
+    (Nhập thông tin nhận hàng) <.down- (Nhập ghi chú) : <<extend>>
+}
+
+@enduml

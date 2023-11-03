@@ -15,6 +15,7 @@ rectangle "Hệ thống quản trị" {
     QT -down- (Xem đơn hàng)
     QT -down- (Hỗ trợ khách hàng)
     QT -down- (Gửi email)
+    QT -down- (Xem đánh giá)
     
     (Đăng nhập) <.down- (Đăng xuất) : <<extend>>
     (Đăng nhập) <.down- (Đổi mật khẩu) : <<extend>>
@@ -70,5 +71,6 @@ rectangle "Hệ thống quản trị" {
     (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua email)
     (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua số điện thoại)
     (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua mạng xã hội)
+    (Xem đánh giá) <.down- (Xóa đánh giá) : <<extend>>
 }
 @enduml

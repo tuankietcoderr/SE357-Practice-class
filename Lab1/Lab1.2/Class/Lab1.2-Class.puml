@@ -1,0 +1,132 @@
+@startuml Class diagram
+class User {}
+class Admin {
+    - username: String
+    - password: String
+    - phoneNumber: String
+    - email: String
+    + createProduct(product: Product)
+    + updateProduct(newProductData: Product)
+    + deleteProduct(productId: String)
+    + createProductCategory(productCategory: ProductCategory)
+    + updateProductCategory(newProductCategoryData: ProductCategory)
+    + deleteProductCategory(productCategoryId: String)
+    + createProductCollection(productCollection: ProductCollection)
+    + updateProductCollection(newProductCollectionData: ProductCollection)
+    + deleteProductCollection(productCollectionId: String)
+    + updateOrderStatus(status: EOrderStatus)
+    + deleteOrder(orderId: String)
+    + deleteReview(reviewId: String)
+
+}
+
+
+class Product {
+    - id: String
+    - name: String
+    - description: String
+    - size: Number[]
+    - price: Number
+    - quantity: Number
+    - image: String
+    - images: String[]
+    + updateProduct(newProductData: Product)
+    + deleteProduct(productId: String)
+}
+
+class Customer {
+    + addToCart(productId: String)
+    + removeFromCart(productId: String)
+    + checkout()
+}
+
+class Cart {
+    - products: Product[]
+    - total: Number
+    + checkout()
+}
+
+class ProductCategory {
+    - name: String
+    - description: String
+    - products: Product[]
+    + addProduct(product: Product)
+    + removeProduct(productId: String)
+    + updateProductCategory(newProductCategoryData: ProductCategory)
+    + removeProductCategory(productCategoryId: String)
+}
+
+class ProductCollection {
+    - name: String
+    - description: String
+    - products: Product[]
+    + addProduct(product: Product)
+    + removeProduct(productId: String)
+    + updateProductCollection(newProductCollectionData: ProductCollection)
+    + removeProductCollection(productCollectionId: String)
+}
+
+enum EOderStatus {
+    PENDING
+    CONFIRMED
+    SHIPPING
+    DELIVERED
+    CANCELLED
+}
+
+enum EPaymentMethod {
+    COD
+    ONLINE_PAYMENT
+}
+
+class Order {
+    - id: String
+    - products: Product[]
+    - total: Number
+    - status: EOderStatus
+    - date: Date
+    - paymentMethod: EPaymentMethod
+    + updateOrderStatus(status: EOrderStatus)
+    + deleteOrder(orderId: String)
+}
+
+class Import {
+    - id: String
+    - products: Product[]
+    - total: Number
+    - date: Date
+    + deleteImport(importId: String)
+}
+
+class Review {
+    - productId: String
+    - reviewer: String
+    - rating: Number
+    - content: String
+    + deleteReview(reviewId: String)
+}
+
+class AggregateRevenue {
+    - date: Date
+    - revenue: Number
+}
+
+ProductCategory "1" *-- "0..*" Product
+ProductCollection "1" *-- "0..*" Product
+User <|-- Admin
+User <|-- Customer
+Cart "1" -- "0..*" Product
+Customer "1" -- "1" Cart
+Admin "1" -- "0..*" ProductCategory
+Admin "1" -- "0..*" ProductCollection
+Admin "1" -- "0..*" Order
+Admin "1" -- "0..*" Review
+Admin "1" -- "0..*" Import
+Admin "1" -- "0..*" AggregateRevenue
+Order "1" -- "0..*" Product
+Review "1" -- "0..*" Product
+Import "1" -- "0..*" Product
+AggregateRevenue "1" -- "0..*" Product
+
+
+@enduml

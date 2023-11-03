@@ -1,0 +1,37 @@
+@startuml Confirm order
+actor Admin as a
+boundary OrderListUI as olu
+control OrderController as oc
+database OrderDB as odb
+boundary EmailService as es
+actor Customer as c
+
+a -> olu : 1: Open order list
+a++
+olu++
+olu -> oc : 2: Get order list
+oc++
+oc -> odb : 3: Get order list
+odb++
+odb --> oc : 4: Return order list
+oc --> olu : 3: Return order list
+olu --> a : 4: Show order list
+a -> olu : 5: Select order
+olu -> oc : 6: Get order
+oc -> odb : 7: Get order
+odb --> oc : 8: Return order
+oc --> olu : 7: Return order
+olu -> a : 8: Show order
+a -> olu: Confirm order
+a--
+olu -> oc : 9: Confirm order
+olu--
+oc -> odb : 10: Update order
+odb --> oc : 11: Return order
+odb--
+oc -> es : 12: request to send email
+oc--
+es++
+es --> c : 13: Send email
+es--
+@enduml

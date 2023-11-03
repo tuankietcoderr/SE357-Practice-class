@@ -1,0 +1,20 @@
+@startuml Add voucher sequence
+autonumber
+actor Admin
+boundary AdminPanel as ap
+control AdminController as ac
+entity Voucher as p
+database VoucherDatabase as pr
+Admin -> ap++ : openModal()
+Admin++
+ap -> ac : deleteVoucher(voucherId: String)
+ac++
+ac -> p : delete(voucherId: String)
+p++
+p -> pr : remove(voucherId: String)
+pr --> p-- : success
+p --> ac-- : success
+ac --> ap-- : showSuccessMessage()
+ap --> Admin-- : closeModal()
+Admin--
+@enduml

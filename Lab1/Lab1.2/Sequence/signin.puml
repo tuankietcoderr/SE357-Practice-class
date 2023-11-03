@@ -1,0 +1,23 @@
+@startuml Signin Sequence
+autonumber
+actor Admin
+boundary "Signin page" as SigP
+control AuthController as Auth
+database Database as DB
+boundary "Admin page" as AdP
+Admin -> SigP++ : signin(username, password)
+Admin++
+SigP -> Auth++ : signin(username, password)
+Auth -> DB++ : findUser(username, password)
+alt success
+    DB --> Auth : user(role: admin)
+    Auth --> SigP: user(role: admin)
+    SigP --> Admin : displaySuccessMessage("Sign in successfully")
+    Admin -> AdP : redirect("/")
+else fail
+    DB --> Auth-- : error("user not found")
+    Auth --> SigP-- : throw error("user not found")
+    SigP --> Admin-- : displayErrorMessage("user not found")
+    Admin--
+end
+@enduml

@@ -1,0 +1,20 @@
+@startuml Add product sequence
+autonumber
+actor Admin
+boundary AdminPanel as ap
+control AdminController as ac
+entity Product as p
+database ProductDatabase as pr
+Admin -> ap++ : openModal()
+Admin++
+ap -> ac : addProductForm(product: Product)
+ac++
+ac -> p : edit(product: Product)
+p++
+p -> pr : save(product: Product)
+pr --> p-- : updated Product
+p --> ac-- : updatedProduct
+ac --> ap-- : showSuccessMessage()
+ap --> Admin-- : closeModal()
+Admin--
+@enduml

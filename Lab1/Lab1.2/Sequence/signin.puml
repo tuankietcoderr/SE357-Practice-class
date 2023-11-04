@@ -1,4 +1,4 @@
-@startuml Signin Sequence
+@startuml Signin
 autonumber
 actor Admin
 boundary "Signin page" as SigP

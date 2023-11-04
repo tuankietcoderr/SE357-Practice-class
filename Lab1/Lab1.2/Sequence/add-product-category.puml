@@ -1,4 +1,4 @@
-@startuml Add productCategory sequence
+@startuml Add product category
 autonumber
 actor Admin
 boundary AdminPanel as ap

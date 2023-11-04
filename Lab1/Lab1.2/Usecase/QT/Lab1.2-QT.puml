@@ -76,5 +76,6 @@ rectangle "Hệ thống quản trị" {
     (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua email)
     (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua số điện thoại)
     (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua mạng xã hội)
+    (Xem đánh giá) <.down- (Xóa đánh giá) : <<extend>>
 }
 @enduml

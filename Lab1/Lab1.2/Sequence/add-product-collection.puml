@@ -1,4 +1,4 @@
-@startuml Add productCollection sequence
+@startuml Add product collection
 autonumber
 actor Admin
 boundary AdminPanel as ap

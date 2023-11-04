@@ -1,4 +1,4 @@
-@startuml Add voucher sequence
+@startuml Delete product collection
 autonumber
 actor Admin
 boundary AdminPanel as ap

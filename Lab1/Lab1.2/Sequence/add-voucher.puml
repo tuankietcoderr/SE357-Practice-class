@@ -1,4 +1,4 @@
-@startuml Add voucher sequence
+@startuml Add voucher
 autonumber
 actor Admin
 boundary AdminPanel as ap

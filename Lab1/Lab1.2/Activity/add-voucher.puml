@@ -1,0 +1,22 @@
+@startuml Add voucher
+|Admin|
+start
+:Click add voucher button;
+|System|
+:Display add voucher modal;
+|Admin|
+:Fill in voucher details;
+|System|
+:Check if voucher details are valid;
+if (valid) then (yes)
+|Admin|
+:Click submit button;
+|System|
+:Create voucher details;
+:Notification "Voucher successfully added";
+else (no)
+|System|
+:Notification "Invalid voucher details";
+endif
+stop
+@enduml

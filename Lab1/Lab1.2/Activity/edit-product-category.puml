@@ -1,0 +1,22 @@
+@startuml Edit product category
+|Admin|
+start
+:Click edit product category button;
+|System|
+:Display edit product category modal;
+|Admin|
+:Update product category details;
+|System|
+:Check if product category details are valid;
+if (valid) then (yes)
+|Admin|
+:Click submit button;
+|System|
+:Update product category details;
+:Notification "Product category successfully edited";
+else (no)
+|System|
+:Notification "Invalid product category details";
+endif
+stop
+@enduml

@@ -1,0 +1,22 @@
+@startuml Edit product
+|Admin|
+start
+:Click edit product button;
+|System|
+:Display edit product modal;
+|Admin|
+:Update product details;
+|System|
+:Check if product details are valid;
+if (valid) then (yes)
+|Admin|
+:Click submit button;
+|System|
+:Update product details;
+:Notification "Product successfully edited";
+else (no)
+|System|
+:Notification "Invalid product details";
+endif
+stop
+@enduml

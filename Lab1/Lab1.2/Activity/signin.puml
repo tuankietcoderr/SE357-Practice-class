@@ -1,0 +1,15 @@
+@startuml Signin
+|Admin|
+start
+repeat 
+:Enter sign in details;
+:Click on sign in button;
+|System|
+:Send these information 
+to Authentication controller;
+backward:Notification "Username or password is incorrect";
+repeat while (validate data) is (no) not (yes)
+:Notification "Logged in sucessfully";
+:Redirect the admin to admin page;
+stop
+@enduml

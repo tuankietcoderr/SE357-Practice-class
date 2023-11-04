@@ -1,0 +1,20 @@
+@startuml Add productCollection sequence
+autonumber
+actor Admin
+boundary AdminPanel as ap
+control AdminController as ac
+entity ProductCollection as p
+database ProductCollectionDatabase as pr
+Admin -> ap++ : openModal()
+Admin++
+ap -> ac : addProductCollectionForm(productCollection: ProductCollection)
+ac++
+ac -> p : edit(productCollection: ProductCollection)
+p++
+p -> pr : save(productCollection: ProductCollection)
+pr --> p-- : updated ProductCollection
+p --> ac-- : updatedProductCollection
+ac --> ap-- : showSuccessMessage()
+ap --> Admin-- : closeModal()
+Admin--
+@enduml

@@ -1,0 +1,20 @@
+@startuml Add productCategory sequence
+autonumber
+actor Admin
+boundary AdminPanel as ap
+control AdminController as ac
+entity ProductCategory as p
+database ProductCategoryDatabase as pr
+Admin -> ap++ : openModal()
+Admin++
+ap -> ac : addProductCategoryForm(productCategory: ProductCategory)
+ac++
+ac -> p : create(productCategory: ProductCategory)
+p++
+p -> pr : save(productCategory: ProductCategory)
+pr --> p-- : new ProductCategory
+p --> ac-- : newProductCategory
+ac --> ap-- : showSuccessMessage()
+ap --> Admin-- : closeModal()
+Admin--
+@enduml

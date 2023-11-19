@@ -29,6 +29,7 @@ class Product {
     - price: Number
     - quantity: Number
     - image: String
+    - categories: ProductCategory[]
     - images: String[]
     + updateProduct(newProductData: Product)
     + deleteProduct(productId: String)
@@ -98,14 +99,6 @@ class Import {
     + deleteImport(importId: String)
 }
 
-class Review {
-    - productId: String
-    - reviewer: String
-    - rating: Number
-    - content: String
-    + deleteReview(reviewId: String)
-}
-
 class AggregateRevenue {
     - date: Date
     - revenue: Number
@@ -120,11 +113,9 @@ Customer "1" -- "1" Cart
 Admin "1" -- "0..*" ProductCategory
 Admin "1" -- "0..*" ProductCollection
 Admin "1" -- "0..*" Order
-Admin "1" -- "0..*" Review
 Admin "1" -- "0..*" Import
 Admin "1" -- "0..*" AggregateRevenue
 Order "1" -- "0..*" Product
-Review "1" -- "0..*" Product
 Import "1" -- "0..*" Product
 AggregateRevenue "1" -- "0..*" Product
 

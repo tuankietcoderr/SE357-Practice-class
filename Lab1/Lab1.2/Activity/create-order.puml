@@ -9,50 +9,40 @@ start
 |System|
 :Navigate customer to payment page;
 |Customer|
+:Enter address;
 :Choose payment method;
-if (payment method is cod) then (yes)
-|System|
-:Display order confirmation page;
+switch (Payment method)
+case (Credit card)
+    |Customer|
+    :Enter credit card details;
+case (COD)
+    |Customer|
+    :continue;
+case (Online banking)
+    |Customer|
+    :Choose bank;
+    |System|
+    :Navigate customer to payment gateway;
+    |Payment gateway|
+    :Check validaty of payment details;
+    :Process payment;
+    |Customer|
+    :Enter TAC;
+    |System|
+    :Verify TAC;
+    :Process payment;
+    |Customer|
+    :Click OK;
+endswitch
 |Customer|
-:Click confirm order;
+:Click confirm button;
 |System|
-:Send confirmed email to customer;
-:Notification "Order successfully";
-(no) elseif (payment method is credit card) then (yes)
-|System|
-:Display credit card form;
-|Customer|
-:Fill in credit card details;
-|System|
-:Process the payment and send confirmed email to customer;
-:Notification "Order successfully";
-(no) elseif (payment method is online payment) then (yes)
-:Navigate customer to online payment page;
-|Customer|
-:Scan QR code to pay;
-|Payment System|
-:Validate token and payment details;
-if (payment is successful) then (yes)
-|Payment System|
 :Navigate customer to order confirmation page;
+:Display order details;
 |Customer|
-:Click confirm order;
+:Confirm order;
 |System|
-:Send confirmed email to customer;
-:Notification "Order successfully";
-else (no)
-|Payment System|
-:Display error message;
-endif
-|System|
-:paypal form;
-endif
-|Customer| 
-if (click confirm order) then (yes)
-|System|
-:Process the payment and send confirmed email to customer;
-:Notification "Order successfully";
-else (no)
-endif
+:Send order confirmation email;
+:Navigate customer to home page;
 stop
 @enduml

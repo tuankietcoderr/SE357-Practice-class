@@ -9,7 +9,8 @@
 
 **Supervisors**:
 
-- [Vũ Tuấn Hải - [Github](https://github.com/vutuanhai237))
+- Vũ Tuấn Hải - [Github](https://github.com/vutuanhai237))
+- Nguyễn Trịnh Đông
 
 **Description**: AnimeStyle Accessories aspires to be the go-to online destination for anime culture enthusiasts, presenting a diverse collection of high-quality accessories inspired by iconic Japanese animation themes. This business requirements document outlines key features, including a curated product range, a user-friendly interface. The platform aims to create a secure and enjoyable shopping environment. Social media integration and analytics tools will enhance brand visibility and provide insights for informed business decisions. With a commitment to user satisfaction, AnimeStyle Accessories seeks to establish itself as a premier online marketplace for unique anime-inspired accessories.
 

@@ -16,9 +16,9 @@ rectangle "Hệ thống khách hàng mua hàng" {
     KH -down- (Xem thông tin khuyến mãi)
     KH -down- (Xem feedback của khách hàng khác)
     KH -down- (Liên hệ với người bán)
-    (Tìm kiếm sản phẩm) <|-down- (Tìm kiếm sản phẩm theo danh mục)
-    (Tìm kiếm sản phẩm) <|-down- (Tìm kiếm sản phẩm theo giá)
-    (Tìm kiếm sản phẩm) <|-down- (Tìm kiếm sản phẩm theo tên)
+    (Tìm kiếm sản phẩm) <.-down- (Tìm kiếm sản phẩm theo danh mục) : <<extend>>
+    (Tìm kiếm sản phẩm) <.-down- (Tìm kiếm sản phẩm theo giá) : <<extend>>
+    (Tìm kiếm sản phẩm) <.-down- (Tìm kiếm sản phẩm theo tên) : <<extend>>
     (Xem danh sách sản phẩm nổi bật) <.down- (Xem chi tiết sản phẩm) : <<extend>>
     (Xem danh mục sản phẩm) <.down- (Xem chi tiết danh mục sản phẩm) : <<extend>>
     (Xem chi tiết danh mục sản phẩm) <.down- (Xem chi tiết sản phẩm) : <<extend>>
@@ -33,8 +33,8 @@ rectangle "Hệ thống khách hàng mua hàng" {
     (Lựa chọn các tùy chọn sản phẩm) -down.> (Lựa chọn số lượng) : <<include>>
     (Lựa chọn các tùy chọn sản phẩm) <.down- (Lựa chọn mã giảm giá) : <<extend>>
     (Lựa chọn các tùy chọn sản phẩm) -down.> (Lựa chọn mua hàng) : <<include>>
-    (Lựa chọn mua hàng) <|-down- (Thêm vào giỏ hàng)
-    (Lựa chọn mua hàng) <|-down- (Mua ngay)
+    (Lựa chọn mua hàng) <.down- (Thêm vào giỏ hàng) : <<extend>>
+    (Lựa chọn mua hàng) <.-down- (Mua ngay) : <<extend>>
     (Xem giỏ hàng) <.down- (Lựa chọn mua hàng) : <<extend>>
     (Xem giỏ hàng) <.down- (Xóa khỏi giỏ hàng) : <<extend>>
     (Xem giỏ hàng) <.down- (Cập nhật giỏ hàng) : <<extend>>
@@ -45,8 +45,8 @@ rectangle "Hệ thống khách hàng mua hàng" {
     (Thanh toán) <.down- (Xem thông tin đặt hàng) : <<include>>
     (Thanh toán) <.down- (Nhập thông tin nhận hàng) : <<include>>
     (Thanh toán) <.down- (Chọn phương thức thanh toán) : <<include>>
-    (Chọn phương thức thanh toán) <|-down- (Thanh toán khi nhận hàng)
-    (Chọn phương thức thanh toán) <|-down- (Thanh toán chuyển khoản)
+    (Chọn phương thức thanh toán) <.-down- (Thanh toán khi nhận hàng) : <<extend>>
+    (Chọn phương thức thanh toán) <.-down- (Thanh toán chuyển khoản) : <<extend>>
     (Nhập thông tin nhận hàng) <.down- (Nhập họ tên) : <<include>>
     (Nhập thông tin nhận hàng) <.down- (Nhập địa chỉ) : <<include>>
     (Nhập thông tin nhận hàng) <.down- (Nhập ghi chú) : <<extend>>

@@ -16,9 +16,9 @@ rectangle "Hệ thống quản trị" {
     QT -down- (Xem đơn hàng)
     QT -down- (Xem sản phẩm nổi bật)
     QT -down- (Hỗ trợ khách hàng)
-    (Tìm kiếm sản phẩm) <|-down- (Tìm kiếm sản phẩm theo danh mục)
-    (Tìm kiếm sản phẩm) <|-down- (Tìm kiếm sản phẩm theo giá)
-    (Tìm kiếm sản phẩm) <|-down- (Tìm kiếm sản phẩm theo tên)
+    (Tìm kiếm sản phẩm) <.-down- (Tìm kiếm sản phẩm theo danh mục) : <<extend>>
+    (Tìm kiếm sản phẩm) <.-down- (Tìm kiếm sản phẩm theo giá) : <<extend>>
+    (Tìm kiếm sản phẩm) <.-down- (Tìm kiếm sản phẩm theo tên) : <<extend>>
     (Đăng nhập) <.down- (Đăng xuất) : <<extend>>
     (Đăng nhập) <.down- (Đổi mật khẩu) : <<extend>>
     (Xem sản phẩm) <.down- (Sửa thông tin sản phẩm) : <<extend>>
@@ -33,8 +33,8 @@ rectangle "Hệ thống quản trị" {
     (Xác nhận đơn hàng) <.down- (Gửi email) : <<include>>
     (Xác nhận đơn hàng) <.down- (Tiếp nhận đơn hàng) : <<extend>>
     (Xác nhận đơn hàng) <.down- (Hủy đơn hàng) : <<extend>>
-    (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua email)
-    (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua số điện thoại)
-    (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua mạng xã hội)
+    (Hỗ trợ khách hàng) <.-down- (Hỗ trợ qua email) : <<extend>>
+    (Hỗ trợ khách hàng) <.-down- (Hỗ trợ qua số điện thoại) : <<extend>>
+    (Hỗ trợ khách hàng) <.-down- (Hỗ trợ qua mạng xã hội) : <<extend>>
 }
 @enduml

@@ -1,10 +1,3 @@
-# SE357.O12.PMCL
-
-## Thông tin nhóm:
-
-- [Trần Tuấn Kiệt](https://github.com/tuankietcoderr): 21522266
-- [Trần Thị Tuyết Mai](https://github.com/tuytmai): 21520340
-
 ![UIT](https://img.shields.io/badge/from-UIT%20VNUHCM-blue?style=for-the-badge&link=https%3A%2F%2Fwww.uit.edu.vn%2F)
 
 [Anime Accessories Store]

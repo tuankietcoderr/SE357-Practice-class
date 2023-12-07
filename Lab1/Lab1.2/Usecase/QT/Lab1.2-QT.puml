@@ -15,47 +15,24 @@ rectangle "Hệ thống quản trị" {
     QT -down- (Xem khuyến mãi)
     QT -down- (Xem đơn hàng)
     QT -down- (Xem sản phẩm nổi bật)
-    QT -down- (Thêm feedback)
     QT -down- (Hỗ trợ khách hàng)
     (Tìm kiếm sản phẩm) <|-down- (Tìm kiếm sản phẩm theo danh mục)
     (Tìm kiếm sản phẩm) <|-down- (Tìm kiếm sản phẩm theo giá)
     (Tìm kiếm sản phẩm) <|-down- (Tìm kiếm sản phẩm theo tên)
     (Đăng nhập) <.down- (Đăng xuất) : <<extend>>
     (Đăng nhập) <.down- (Đổi mật khẩu) : <<extend>>
-    (Thêm sản phẩm) -down.> (Thêm hình ảnh sản phẩm) : <<include>>
-    (Thêm sản phẩm) -down.> (Thêm mô tả) : <<include>>
-    (Thêm sản phẩm) -down.> (Thêm kích cỡ) : <<include>>
-    (Thêm sản phẩm) -down.> (Thêm số lượng tồn kho) : <<include>>
-    (Thêm sản phẩm) -down.> (Thêm giá sản phẩm) : <<include>>
-    (Thêm sản phẩm) -down.> (Thêm mã sản phẩm) : <<include>>
     (Xem sản phẩm) <.down- (Sửa thông tin sản phẩm) : <<extend>>
     (Xem sản phẩm) <.down- (Xóa sản phẩm) : <<extend>>
-    (Tạo danh mục sản phẩm) -down.> (Tạo tên danh mục) : <<include>>
-    (Tạo danh mục sản phẩm) -down.> (Chọn danh sách sản phẩm) : <<include>>
-    (Tạo danh mục sản phẩm) -down.> (Tạo hình ảnh danh mục) : <<include>>
     (Xem danh mục sản phẩm) <.down- (Sửa danh mục sản phẩm) : <<extend>>
     (Xem danh mục sản phẩm) <.down- (Xóa danh mục sản phẩm) : <<extend>>
-    (Xem danh mục sản phẩm) <.down- (Xóa danh mục sản phẩm) : <<extend>>
-    (Tạo bộ sưu tập sản phẩm) -down.> (Tạo tên bộ sưu tập) : <<include>>
-    (Tạo bộ sưu tập sản phẩm) -down.> (Chọn danh sách sản phẩm) : <<include>>
-    (Tạo bộ sưu tập sản phẩm) -down.> (Tạo hình ảnh bộ sưu tập) : <<include>>
     (Xem bộ sưu tập sản phẩm) <.down- (Sửa bộ sưu tập sản phẩm) : <<extend>>
     (Xem bộ sưu tập sản phẩm) <.down- (Xóa bộ sưu tập sản phẩm) : <<extend>>
-    (Tạo khuyến mãi) -down.> (Thêm mã khuyến mãi) : <<include>>
-    (Tạo khuyến mãi) -down.> (Thêm hình ảnh khuyến mãi) : <<include>>
-    (Tạo khuyến mãi) -down.> (Thêm ngày hết hạn) : <<include>>
-    (Tạo khuyến mãi) -down.> (Thêm điều kiện sử dụng) : <<include>>
-    (Tạo khuyến mãi) -down.> (Thêm giá trị khuyến mãi) : <<include>>
-    (Tạo khuyến mãi) -down.> (Thêm mô tả khuyến mãi) : <<include>>
-    (Tạo khuyến mãi) -down.> (Thêm số lượng sử dụng khuyến mãi) : <<include>>
     (Xem khuyến mãi) <.down- (Sửa khuyến mãi) : <<extend>>
     (Xem khuyến mãi) <.down- (Xóa khuyến mãi) : <<extend>>
     (Xem đơn hàng) <.down- (Xác nhận đơn hàng) : <<extend>>
     (Xác nhận đơn hàng) <.down- (Gửi email) : <<include>>
     (Xác nhận đơn hàng) <.down- (Tiếp nhận đơn hàng) : <<extend>>
     (Xác nhận đơn hàng) <.down- (Hủy đơn hàng) : <<extend>>
-    (Thêm feedback) <.down- (Sửa feedback) : <<extend>>
-    (Thêm feedback) <.down- (Xóa feedback) : <<extend>>
     (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua email)
     (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua số điện thoại)
     (Hỗ trợ khách hàng) <|-down- (Hỗ trợ qua mạng xã hội)

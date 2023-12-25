@@ -1,22 +1,22 @@
-@startuml Add product collection
+@startuml Add product category
 |Admin|
 start
-:Click add product collection button;
+:(1) Click add product category button;
 |System|
-:Display add product collection modal;
+:(2) Display add product category modal;
 |Admin|
-:Fill in product collection details;
+:(3) Fill in product category details;
 |System|
-:Check if product collection details are valid;
-if (valid) then (yes)
+:(4) Check if product category details are valid;
+if ((5) valid) then (yes)
 |Admin|
-:Click submit button;
+:(6) Click submit button;
 |System|
-:Create product collection details;
-:Notification "Product collection successfully added";
+:(7) Create product category details;
+:(8) Notification "Product category successfully added";
 else (no)
 |System|
-:Notification "Invalid product collection details";
+:(9) Notification "Invalid product category details";
 endif
 stop
 @enduml

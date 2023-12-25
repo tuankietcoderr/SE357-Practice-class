@@ -1,16 +1,16 @@
 @startuml Confirm order
 |Admin|
 start
-:Select an order to confirm order;
+:(1) Select an order to confirm order;
 |System|
-:Display details of the order;
+:(2) Display details of the order;
 |Admin|
-:Click confirm button;
+:(3) Click confirm button;
 |System|
-:Update order status to "Confirmed";
-:Send notification to customer;
-:Notification "Confirm order successfully";
+:(4) Update order status to "Confirmed";
+:(5) Send notification to customer;
+:(6) Notification "Confirm order successfully";
 |Admin|
-:Click "OK" button;
+:(7) Click "OK" button;
 stop
 @enduml

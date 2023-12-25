@@ -1,48 +1,48 @@
 @startuml Create order
 |Customer|
 start
-:Select a product to view;
+:(1) Select a product to view;
 |System|
-:Display details of the product;
+:(2) Display details of the product;
 |Customer|
-:Click order button;
+:(3) Click order button;
 |System|
-:Navigate customer to payment page;
+:(4) Navigate customer to payment page;
 |Customer|
-:Enter address;
-:Choose payment method;
-switch (Payment method)
+:(5) Enter address;
+:(6) Choose payment method;
+switch ((7) Payment method)
 case (Credit card)
     |Customer|
-    :Enter credit card details;
+    :(8) Enter credit card details;
 case (COD)
     |Customer|
-    :continue;
+    :(9) continue;
 case (Online banking)
     |Customer|
-    :Choose bank;
+    :(10) Choose bank;
     |System|
-    :Navigate customer to payment gateway;
+    :(11) Navigate customer to payment gateway;
     |Payment gateway|
-    :Check validaty of payment details;
-    :Process payment;
+    :(12) Check validaty of payment details;
+    :(13) Process payment;
     |Customer|
-    :Enter TAC;
+    :(14) Enter TAC;
     |System|
-    :Verify TAC;
-    :Process payment;
+    :(15) Verify TAC;
+    :(16) Process payment;
     |Customer|
-    :Click OK;
+    :(17) Click OK;
 endswitch
 |Customer|
-:Click confirm button;
+:(18) Click confirm button;
 |System|
-:Navigate customer to order confirmation page;
-:Display order details;
+:(19) Navigate customer to order confirmation page;
+:(20) Display order details;
 |Customer|
-:Confirm order;
+:(21) Confirm order;
 |System|
-:Send order confirmation email;
-:Navigate customer to home page;
+:(22) Send order confirmation email;
+:(23) Navigate customer to home page;
 stop
 @enduml

@@ -1,22 +1,22 @@
 @startuml Edit voucher
 |Admin|
 start
-:Click edit voucher button;
+:(1) Click edit voucher button;
 |System|
-:Display edit voucher modal;
+:(2) Display edit voucher modal;
 |Admin|
-:Update voucher details;
+:(3) Update voucher details;
 |System|
-:Check if voucher details are valid;
-if (valid) then (yes)
+:(4) Check if voucher details are valid;
+if ((5) valid) then (yes)
 |Admin|
-:Click submit button;
+:(6) Click submit button;
 |System|
-:Update voucher details;
-:Notification "Voucher successfully edited";
+:(7) Update voucher details;
+:(8) Notification "Voucher successfully edited";
 else (no)
 |System|
-:Notification "Invalid voucher details";
+:(9) Notification "Invalid voucher details";
 endif
 stop
 @enduml

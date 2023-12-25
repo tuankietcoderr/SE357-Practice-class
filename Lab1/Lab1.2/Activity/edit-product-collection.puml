@@ -1,22 +1,22 @@
 @startuml Edit product collection
 |Admin|
 start
-:Click edit product collection button;
+:(1) Click edit product collection button;
 |System|
-:Display edit product collection modal;
+:(2) Display edit product collection modal;
 |Admin|
-:Update product collection details;
+:(3) Update product collection details;
 |System|
-:Check if product collection details are valid;
-if (valid) then (yes)
+:(4) Check if product collection details are valid;
+if ((5) valid) then (yes)
 |Admin|
-:Click submit button;
+:(6) Click submit button;
 |System|
-:Update product collection details;
-:Notification "Product collection successfully edited";
+:(7) Update product collection details;
+:(8) Notification "Product collection successfully edited";
 else (no)
 |System|
-:Notification "Invalid product collection details";
+:(9) Notification "Invalid product collection details";
 endif
 stop
 @enduml

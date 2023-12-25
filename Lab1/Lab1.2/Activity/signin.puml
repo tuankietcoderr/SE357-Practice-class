@@ -2,14 +2,14 @@
 |Admin|
 start
 repeat 
-:Enter sign in details;
-:Click on sign in button;
+:(1) Enter sign in details;
+:(2) Click on sign in button;
 |System|
-:Send these information 
+:(3) Send these information 
 to Authentication controller;
-backward:Notification "Username or password is incorrect";
-repeat while (validate data) is (no) not (yes)
-:Notification "Logged in sucessfully";
-:Redirect the admin to admin page;
+backward:(4) Notification "Username or password is incorrect";
+repeat while ((5) validate data) is (no) not (yes)
+:(6) Notification "Logged in sucessfully";
+:(7) Redirect the admin to admin page;
 stop
 @enduml
